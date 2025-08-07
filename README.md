@@ -42,7 +42,7 @@
     + Devuelve un tablero inicializado.
     + El turno asignado automáticamente al BLANCO.
 
-+ Movimiento(mov: str) -> Bool:
++ movimiento_pieza(mov: str) -> Bool:
     + Devuelve si se puede efectuar el movimiento o no. 
     En caso de que se pueda, realiza el movimiento y cambia al jugador
 
