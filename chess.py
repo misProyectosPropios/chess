@@ -99,4 +99,8 @@ class Jugador(Enum):
         print("  -----------------")
         print("   a b c d e f g h\n")
 
-    
+    def _cambiarTurno(self) -> None:
+        if (self.Turno == Jugador.Blanco):
+            self.Turno = Jugador.Negro
+        else:
+            self.Turno = Jugador.Blanco
