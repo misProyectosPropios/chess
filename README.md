@@ -45,7 +45,7 @@
     + Devuelve un tablero inicializado.
     + El turno asignado automáticamente al BLANCO.
 
-+ movimiento_pieza(posPrev: tuple(int, int), posNext: tuple(int, int)) -> Bool:
++ movimiento_pieza(posPrev: tuple(int, int), posAfter: tuple(int, int)) -> Bool:
     + Devuelve si se puede efectuar el movimiento o no. 
     En caso de que se pueda, realiza el movimiento y cambia al jugador
 
