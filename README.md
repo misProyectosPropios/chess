@@ -35,6 +35,8 @@
     + matriz de 8 x 8 de piezas
 + Turno: Jugadores
     + El turno de cada 
++ Piezas_Negro: Set(Piezas)
++ Piezas_Blanco: Set(Piezas)
 
 ##### Métodos
 
