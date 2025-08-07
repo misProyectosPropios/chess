@@ -71,4 +71,31 @@ class Jugador(Enum):
             return self.tablero[fila][columna]
         return None # O podrías lanzar una excepción para coordenadas inválidas
 
-    
+    def imprimir_tablero(self):
+        """
+        Imprime una representación básica del tablero en la consola.
+        """
+        simbolos_pieza = {
+            Pieza.PEON: '♟', Pieza.TORRE: '♜', Pieza.CABALLO: '♞',
+            Pieza.ALFIL: '♝', Pieza.REINA: '♛', Pieza.REY: '♚'
+        }
+        
+        print("\n   a b c d e f g h")
+        print("  -----------------")
+        for r_idx, row in enumerate(self.tablero):
+            print(f"{8 - r_idx} |", end=" ")
+            for piece_info in row:
+                if piece_info:
+                    piece_type, player = piece_info
+                    symbol = simbolos_pieza.get(piece_type, '?')
+                    # Usamos colores para distinguir jugadores (esto puede no funcionar en todas las consolas)
+                    if player == Jugador.BLANCO:
+                        print(f"\033[97m{symbol}\033[0m", end=" ") # Blanco
+                    else:
+                        print(f"\033[30m{symbol}\033[0m", end=" ") # Negro (más oscuro)
+                else:
+                    print(".", end=" ")
+            print(f"| {8 - r_idx}")
+        print("  -----------------")
+        print("   a b c d e f g h\n")
+        print(f"Turno actual: {self.turno.name}")
