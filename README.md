@@ -35,8 +35,9 @@
     + matriz de 8 x 8 de piezas
 + Turno: Jugadores
     + El turno de cada 
-+ Piezas_Negro: Set(Piezas)
-+ Piezas_Blanco: Set(Piezas)
++ PiezasNegro: Set(Piezas)
++ PiezasBlanco: Set(Piezas)
++ MovimientosRealizados: List(Movimientos)
 
 ##### Métodos
 
@@ -44,11 +45,11 @@
     + Devuelve un tablero inicializado.
     + El turno asignado automáticamente al BLANCO.
 
-+ movimiento_pieza(mov: str) -> Bool:
++ movimiento_pieza(posPrev: tuple(int, int), posNext: tuple(int, int)) -> Bool:
     + Devuelve si se puede efectuar el movimiento o no. 
     En caso de que se pueda, realiza el movimiento y cambia al jugador
 
-+ #cambiarTurno() -> None:
++ _cambiarTurno() -> None:
     + Si el Turno == Blanco -> Turno == Negro
     + Si el Turno == Negro -> Turno == Blanco
 
