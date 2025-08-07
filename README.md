@@ -53,3 +53,9 @@
 + movimientoPieza(pos: tuple(int, int)) -> Set(tuple(int, int))
     + Devuelve el conjunto con todas las posiciones a las que una pieza en la posición pos pueda realizar legalmente
 
++ imprimir_tablero() -> None
+    + Muestra el tablero
+
++ obtener_pieza(fila: int, columna: int) -> tuple[Pieza, Jugador] | None:
+    + Devuelve la pieza en la posición o None en caso de no haber
+
