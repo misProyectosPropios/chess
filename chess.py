@@ -24,10 +24,10 @@ class Jugador(Enum):
         Inicializa el tablero con las piezas en sus posiciones iniciales
         y establece el turno inicial al BLANCO.
         """
-        self.tablero = self._crear_tablero_inicial()
+        self.tablero = self._crearTableroInicial()
         self.turno = Jugador.BLANCO
 
-    def _crear_tablero_inicial(self) -> list[list[tuple[Pieza, Jugador] | None]]:
+    def _crearTableroInicial(self) -> list[list[tuple[Pieza, Jugador] | None]]:
         """
         Método privado para inicializar la matriz del tablero con la disposición
         inicial de las piezas de ajedrez.
@@ -63,7 +63,7 @@ class Jugador(Enum):
 
         return tablero
 
-    def obtener_pieza(self, fila: int, columna: int) -> tuple[Pieza, Jugador] | None:
+    def obtenerPieza(self, fila: int, columna: int) -> tuple[Pieza, Jugador] | None:
         """
         Devuelve la pieza en una casilla específica del tablero.
         """
@@ -71,7 +71,7 @@ class Jugador(Enum):
             return self.tablero[fila][columna]
         return None # O podrías lanzar una excepción para coordenadas inválidas
 
-    def imprimir_tablero(self):
+    def imprimirTablero(self):
         """
         Imprime una representación básica del tablero en la consola.
         """
@@ -104,3 +104,15 @@ class Jugador(Enum):
             self.Turno = Jugador.Negro
         else:
             self.Turno = Jugador.Blanco
+
+    def movimientoPieza(posPrev: tuple(int, int), posAfter: tuple(int, int)) -> Bool:
+        movimientos: Set(tuple(int, int)) = movimientosPermitidosPieza(posPrev)
+        if posAfter in movimientos:
+            # Modificar la casilla por None
+            # Modificar la casilla posAfter por la nueva
+            return True
+        return False
+    
+    def movimientosPermitidosPieza(pos: tuple(int, int)) -> Set(tuple(int, int)):
+        pass
+
