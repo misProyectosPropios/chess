@@ -18,7 +18,7 @@ class Jugador(Enum):
     BLANCO = 1
     NEGRO = 2
 
- def __init__(self):
+    def __init__(self):
         """
         Constructor de la clase Tablero.
         Inicializa el tablero con las piezas en sus posiciones iniciales
@@ -98,4 +98,5 @@ class Jugador(Enum):
             print(f"| {8 - r_idx}")
         print("  -----------------")
         print("   a b c d e f g h\n")
-        print(f"Turno actual: {self.turno.name}")
+
+    
